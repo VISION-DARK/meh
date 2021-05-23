@@ -243,44 +243,6 @@ module.exports = HandleMsg = async (piyo, message) => {
         const isQuotedGif = quotedMsg && quotedMsg.type === 'gif'
 	const isQuotedSticker = quotedMsg && quotedMsg.type === 'sticker'
 	const stickermsg = message.type === 'sticker'
-        const cecan = [
-            {
-            lahwoi : "Pacar piyo yang ke 1",
-            imagex : "https://i.ibb.co/VT4ggGj/Instagram.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 2",
-            imagex : "https://i.ibb.co/x1nD1HD/Instagram-1.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 3",
-            imagex : "https://i.ibb.co/ZXPPFKF/Argumentasi-Dimensi.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 4",   
-            imagex : "https://i.ibb.co/NpY5ZBR/image.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 5",
-            imagex : "https://i.ibb.co/PWsL6HF/download-1.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 6",
-            imagex :"https://i.ibb.co/JFkDWjB/RASANYA-ANJING-BANGET.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 7",
-            imagex : "https://i.ibb.co/5W2gMq6/download-2.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke 8",
-            imagex : "https://i.ibb.co/QNWhdgC/download-3.jpg",
-            },
-            {
-            lahwoi : "Pacar piyo yang ke terakhir",
-            imagex : "https://i.ibb.co/RS1vWC3/Blur.jpg"
-            }
-        ]
         const santet = [
             'Muntah Paku',
             'Meninggoy',
@@ -366,15 +328,15 @@ module.exports = HandleMsg = async (piyo, message) => {
             ]
     /// [LEVELING]
     const levelRole = point.getLevelingLevel(sender.id, _point)
-        var role = 'Copper V'
+        var role = 'Berak'
         if (levelRole >= 5) {
-            role = 'Copper IV'
+            role = 'Pemula'
         } else if (levelRole >= 10) {
-            role = 'Copper III'
+            role = 'Pemula belajar'
         } else if (levelRole >= 15) {
-            role = 'Copper II'
+            role = 'Pemula Tekun'
         } else if (levelRole >= 20) {
-            role = 'Copper I'
+            role = 'Silver VI'
         } else if (levelRole >= 25) {
             role = 'Silver V'
         } else if (levelRole >= 30) {
@@ -450,7 +412,7 @@ function GenerateSerialNumber(mask){
 }
 /////////////////////////////////GAME TRUTH OF DARE//////////////////////////////////
 if (chats == 'truth'){
-    if (!isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa digunakan didalam grup!', id)
+    if (!isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa digunakan didalam grup kaka!', id)
     bb.push(sender.id)
     fs.writeFileSync('./settings/truth.json', JSON.stringify(bb))
             fetch('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/truth.txt')
@@ -570,10 +532,10 @@ const vn = [
         ]
 //AUTOMATE
 if (chats == 'assalamualaikum'){
-    piyo.sendPtt(from, './media/ana3.ogg' , id)
+    piyo.sendPtt(from, './media/anas.ogg' , id)
 }
 if (chats == 'Assalamualaikum'){
-    piyo.sendPtt(from, './media/ana3.ogg' , id)
+    piyo.sendPtt(from, './media/anas.ogg' , id)
 }
 if (chats == 'p'){
     if (!isGroupMsg){
@@ -605,25 +567,25 @@ if (chats == 'bot ini owner'){
 }
 }
 if (chats == 'kontol'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'memek'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'anjing'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'bangsat'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'ngentot'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'babi'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'monyet'){
-    piyo.sendPtt(from, './media/ana2.ogg' , id)
+    piyo.sendPtt(from, './media/anas2.ogg' , id)
 }
 if (chats == 'Bot'){
         let randomvn = vn[Math.floor(Math.random() * vn.length)]
@@ -2904,41 +2866,6 @@ case 'wallpaperanime':
     axios.get('https://akaneko-api.herokuapp.com/api/mobileWallpapers').then(res => {
         piyo.sendFileFromUrl(from, res.data.url, 'Desktop Wallpaper.jpeg', 'Enjoy :>', id);
     });
-break
-
-case 'randomhentai':
-    if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-    if (isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa dilakukan di chat personal!', id)
-    if (isLimit(serial)) return piyo.reply(from, `_Hai ${pushname} Limit request anda sudah mencapai batas, Akan direset kembali setiap jam 9 dan gunakan seperlunya!_`, id)
-    await piyo.reply(from, ind.wait(), id)
-    await piyo.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/random/nsfw/hentai?apikey=${lolhuman}` , 'hentai.jpg' , 'Nih kak' , id)
-    await limitAdd(serial)
-    break
-    case 'gifhentai':
-        if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-        if (isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa dilakukan di chat personal!', id)
-       await piyo.reply(from, ind.wait(), id);
-        axios.get('https://nekos.life/api/v2/img/Random_hentai_gif').then(res => {
-            piyo.sendFileFromUrl(from, res.data.url, 'bakaaaaa baka hentai');
-        });
-        break
-        case 'pussy':
-            if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-            if (isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa dilakukan di chat personal!', id)
-         await piyo.reply(from, ind.wait(), id);
-            axios.get('https://nekos.life/api/v2/img/pussy_jpg').then(res => {
-                piyo.sendFileFromUrl(from, res.data.url);
-            });
-            break
-case 'rhentai':
-    if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-        if (isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa dilakukan di chat personal!', id)
-        if (isLimit(serial)) return piyo.reply(from, `_Hai ${pushname} Limit request anda sudah mencapai batas, Akan direset kembali setiap jam 9 dan gunakan seperlunya!_`, id)
-  await piyo.reply(from, ind.wait(), id);
-   axios.get('https://nekos.life/api/v2/img/hentai').then(res => {
-       piyo.sendFileFromUrl(from, res.data.url);
-       limitAdd(serial)
-   });
    break
 case 'dewabatch':       
 if (args.length == 0) return piyo.reply(from, `Untuk mencari anime batch, ketik ${prefix}dewabatch judul\n\nContoh: ${prefix}dewabatch naruto`, id)
@@ -3051,143 +2978,6 @@ case 'shota':
                                 })
                     })
                 break
-case 'blowjob':
-                if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-                if (chatId){
-                        
-                        await piyo.reply(from, ind.wait(), id)
-                            rugaapi.blowjob()
-                            .then(async ({ url }) => {
-                                await piyo.sendFileFromUrl(from, url, 'blowjob.jpg', '', id)
-                                    .then(() => console.log('Success sending blowjob pic!'))
-                            })
-                    }
-                    break
-case 'fetish':
-                if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-                if (chatId)  {   
-                        await piyo.reply(from, ind.wait(), id)
-                        try {
-                                          if (ar[0] === 'armpits') {
-                                            rugaapi.armpits()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'armpits.jpg', '', id)
-                                                        .then(() => console.log('Success sending armpits pic!'))
-                                                })
-                                        } else if (ar[0] === 'feets') {
-                                            rugaapi.feets()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'feets.jpg', '', id)
-                                                        .then(() => console.log('Success sending feets pic!'))
-                                                })
-                                        } else if (ar[0] === 'thighs') {
-                                            rugaapi.thighs()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'thighs.jpg', '', id)
-                                                        .then(() => console.log('Success sending thighs pic!'))
-                                                })
-                                        } else if (ar[0] === 'ass') {
-                                            rugaapi.ass()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'ass.jpg', '', id)
-                                                        .then(() => console.log('Success sending ass pic!'))
-                                                })
-                                        } else if (ar[0] === 'boobs') {
-                                            rugaapi.boobs()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'boobs.jpg', '', id)
-                                                        .then(() => console.log('Success sending boobs pic!'))
-                                                })
-                                        } else if (ar[0] === 'belly') {
-                                            rugaapi.belly()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'belly.jpg', '', id)
-                                                        .then(() => console.log('Success sending belly pic!'))
-                                                })
-                                        } else if (ar[0] === 'sideboobs') {
-                                            rugaapi.sideboobs()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'sideboobs.jpg', '', id)
-                                                        .then(() => console.log('Success sending sideboobs pic!'))
-                                                })
-                                        } else if (ar[0] === 'ahegao') {
-                                            rugaapi.ahegao()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'ahegao.jpg', '', id)
-                                                        .then(() => console.log('Success sending ahegao pic!'))
-                                                })
-                                        } else {
-                                            await piyo.reply(from, 'Tag not found.', id)
-                                        }
-                                    } catch (err) {
-                                        console.error(err)
-                                        await piyo.reply(from, err, id)
-                                    }
-                                } else {
-                                    const req = args.map((v) => v.toLowerCase())
-                                    if (ar.length !== 0) return await piyo.reply(from, ind.wrongFormat(), id)
-                                    await piyo.reply(from, ind.wait(), id)
-                                    try {
-                                        if (ar[0] === 'armpits') {
-                                            rugaapi.armpits()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'armpits.jpg', '', id)
-                                                        .then(() => console.log('Success sending armpits pic!'))
-                                                })
-                                        } else if (ar[0] === 'feets') {
-                                            rugaapi.feets()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'feets.jpg', '', id)
-                                                        .then(() => console.log('Success sending feets pic!'))
-                                                })
-                                        } else if (ar[0] === 'thighs') {
-                                            rugaapi.thighs()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'thighs.jpg', '', id)
-                                                        .then(() => console.log('Success sending thighs pic!'))
-                                                })
-                                        } else if (ar[0] === 'ass') {
-                                            rugaapi.ass()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'ass.jpg', '', id)
-                                                        .then(() => console.log('Success sending ass pic!'))
-                                                })
-                                        } else if (ar[0] === 'boobs') {
-                                            rugaapi.boobs()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'boobs.jpg', '', id)
-                                                        .then(() => console.log('Success sending boobs pic!'))
-                                                })
-                                        } else if (ar[0] === 'belly') {
-                                            rugaapi.belly()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'belly.jpg', '', id)
-                                                        .then(() => console.log('Success sending belly pic!'))
-                                                })
-                                        } else if (ar[0] === 'sideboobs') {
-                                            rugaapi.sideboobs()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'sideboobs.jpg', '', id)
-                                                        .then(() => console.log('Success sending sideboobs pic!'))
-                                                })
-                                        } else if (ar[0] === 'ahegao') {
-                                            rugaapi.ahegao()
-                                                .then(async ({ url }) => {
-                                                    await piyo.sendFileFromUrl(from, url, 'ahegao.jpg', '', id)
-                                                        .then(() => console.log('Success sending ahegao pic!'))
-                                                })
-                                        } else {
-                                            await piyo.reply(from, 'Tag not found.', id)
-                                        }
-                                    } catch (err) {
-                                        console.error(err)
-                                        await piyo.reply(from, err, id)
-                                    }
-                                }
-                            break
-case 'infofetish':
-                            piyo.sendText(from, `Info fetish : \n\n1. armpits\n2. feets\n3. thighs\n4. ass\n5. boobs\n6. belly\n7. sideboobs\n8. ahegao`)
-                            break
 /////////////////////////////////////////////////////////MENU EDUKASI////////////////////////////////////////////////////////////
         case 'kbbi':           
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
@@ -3824,122 +3614,6 @@ case 'infomotor':
                     await piyo.reply(from, `Error!`, id)
                 }
             break
-			
-case 'xvideos': {
-            if (!isPremium) return piyo.reply(from, `Fitur Ini Khusus Premium ` ,id)
-            const xtext = message.body.replace('/xvideos', '')
-            pemisah = xtext.split("|")
-            const search = pemisah[0]
-            const responlo = await requests("http://hujanapi.xyz/api/xvideos?query="+search+"&count=10&apikey="+apikeyz)
-            const datas = await responlo.json()
-            const img = 'https://seeklogo.com/images/X/xvideos-logo-77E7B4F168-seeklogo.com.png'
-            const asu = datas.result
-            if (pemisah.length == 1)  {
-                let num = 0
-                let fox = "*_Xvideos Search_*\n\n"
-                for (var a = 0; a < asu.length; a++) {
-                    num += 1
-                    fox += "```"+asu[a].title+"```\n"+asu[a].url+"`````("+num+")```\n"
-                }
-                fox += "\n\n*Hey* @! *For detail*:\n```xvideos "+xtext+"|number```"
-                piyo.sendFileFromUrl(from, img,  'bokep.jpg' , fox, `${sender}` )
-            }
-            if (pemisah.length == 2) {
-                const num = pemisah[1]
-                const value = Number(pemisah[1])
-                let fox = "*_Detail Video*_\n"
-                fox += "\nTitle : " + asu[value].title
-                fox += "\nDuration : " + asu[value].duration
-                fox += "\nChannel : " + asu[value].channel
-                fox += "\nLink : " + asu[value].url
-                fox += "\n\n\nSource : xvideos.com"
-                await piyo.sendFileFromUrl(from, asu[value].image, 'bokep.jpg' ,  fox , id)
-            }
-        }
-break
-
-case 'xnxx': { 
-    if (!q) return await piyo.sendText(from, `Ketik /xnxx namanya`)
-            if (!isPremium) return piyo.reply(from, `Fitur Ini Khusus Premium ` ,id)
-            const xtext = message.body.replace('/xnxx', '')
-            pemisah = xtext.split("|")
-            const search = pemisah[0]
-            const responlo = await requests("http://hujanapi.xyz/api/xnxx?query="+xtext+"&count=10&apikey="+apikeyz)
-            const datas = await responlo.json()
-            const img = 'https://yt3.ggpht.com/ytc/AAUvwngpbURJyno0rvS4aza889YDF7-oXbRyopWO0bZO=s900-c-k-c0x00ffffff-no-rj'
-            const asu = datas.result
-            if (pemisah.length == 1)  {
-                let num = 0
-                let fox = "*_Xnxx Search_*\n\n"
-                for (var a = 0; a < asu.length; a++) {
-                    num += 1
-                    fox += "```"+asu[a].title+"```\n"+asu[a].url+"`````("+num+")```\n"
-                }
-                fox += "\n\n*Hey* @! *For detail*:\n```xnxx "+xtext+"|number```"
-                piyo.sendFileFromUrl(from, img,  'bokep.jpg' , fox, `${sender}` )
-            }
-            if (pemisah.length == 2) {
-                const num = pemisah[1]
-                const value = Number(pemisah[1])
-                let fox = "*_Detail Video*_\n"
-                fox += "\nTitle : " + asu[value].title
-                fox += "\nDuration : " + asu[value].duration
-                fox += "\nChannel : " + asu[value].channel
-                fox += "\nLink : " + asu[value].url
-                fox += "\n\n\nSource : xnxx.com"
-                await piyo.sendFileFromUrl(from, asu[value].image, 'bokep.jpg' ,  fox , id)
-            }
-        }
-        break
-
-case 'xnxxdl':{ 
-      if (!isPremium) return piyo.reply(from, `Khusus Premium ` , id )
-      const vioo = await axios.get(`http://hujanapi.xyz/api/xnxxdl?url=${q}&apikey=${apikeyz}`)
-      await piyo.reply(from, `Mohon tunggu , Video terikirim akan lebih lama jika size besar\nSize Videos : ${vioo.data.size}`  , id)
-      await piyo.sendFileFromUrl(from, vioo.data.vid , 'bokep.mp4' , `Title : ${vioo.data.judul}\nSize : ${vioo.data.size}` ,  id)
-}
-break
-
-case 'xvidl':{
-      if (!isPremium) return piyo.reply(from, `Khusus Premium ` , id )
-      const vio = await axios.get(`http://hujanapi.xyz/api/xvideosdl?url=${q}&apikey=${apikeyz}`)
-      await piyo.reply(from, `Mohon tunggu , Video terikirim akan lebih lama jika size besar\nSize Videos : ${vio.data.size}`  , id)
-      await piyo.sendFileFromUrl(from, vio.data.vid , 'bokep.mp4' , `Title : ${vio.data.judul}\nSize : ${vio.data.size}` ,  id)
-}
-break
-			
-case 'indohot':
-            if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner \nUntuk Harga\n\n 10kPerbulan\n5kPerpanjang`, id)
-            const hot = body.slice(7)
-            const hota = await rugaapi.indohot(hot)
-            await piyo.reply(from, hota, id)
-            .catch(() => {
-                piyo.reply(from, 'Ada yang Error!', id)
-            })
-break 
-
-case 'artimimpi':
-                if (!isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-                if (args.length === 0) return piyo.reply(from, `Kirim perintah *${prefix}artimimpi [mimpi]*\nContoh : *${prefix}artimimpi ular*`, id)
-                try {
-                const respp = await axios.get('https://api.vhtear.com/artimimpi?query=' + q + '&apikey=' + vhtearkey)
-                if (respp.data.error) return piyo.reply(from, respp.data.error, id)
-                const anm2 = `➸ Artimimpi : ${respp.data.result.hasil}`
-                piyo.reply(from, anm2, id)
-                } catch (err) {
-                    console.error(err.message)
-                    await piyo.sendFileFromUrl(from, errorurl2, 'error.png', '💔️ Maaf, Mimpi tidak ditemukan')
-                    piyo.sendText(from, 'Artimimpi Error : ' + err)
-               }
-                break
-case 'artinama':
-                
-			if (args.length == 0) return piyo.reply(from, `Untuk mengetahui artinama seseorang`, id)
-            rugaapi.artinama(body.slice(10))
-			.then(async(res) => {
-				await piyo.reply(from, `Arti : ${res}`, id)
-			})
-			break
 case 'cekjodoh':
                 
 			if (args.length !== 2) return piyo.reply(from, `Untuk mengecek jodoh melalui nama\nketik: ${prefix}cekjodoh nama pasangan\n\ncontoh: ${prefix}cekjodoh aku kamu\n\nhanya bisa pakai nama panggilan (satu kata)`)
@@ -4010,34 +3684,6 @@ case 'lirik':
     const darkjok = darkjokex.result
     await piyo.sendFileFromUrl(from, darkjok , 'darkjokes.jpg' , '' , id)
             break
-    case 'chika'://piyobot
-            if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner \nUntuk Harga\n\n 10k Perbulan\n5k Perpanjang`, id)
-    await piyo.reply(from, `media sedang dikirim , tunggu sampe10-20 detik`, id)
-    fetch('https://raw.githubusercontent.com/AlvioAdjiJanuar/chika/main/chika.txt')
-    .then(res => res.text())
-        .then(body => {
-    let chika = body.split('\n')
-    let chikax = chika[Math.floor(Math.random() * chika.length)]
-    piyo.sendFileFromUrl(from, `https://piyobot.000webhostapp.com/${chikax}.mp4`, 'chika.mp4', 'Nih asu', id)
-    .then(() => console.log('Success sending Video'))
-        })
-        .catch(() => {
-            piyo.reply(from, 'Ada yang Error!', id)
-        })
-    break
-    case 'citacita'://Piyobot
-    fetch('https://raw.githubusercontent.com/AlvioAdjiJanuar/citacita/main/citacita.txt')
-    .then(res => res.text())
-        .then(body => {
-    let cita = body.split('\n')
-    let raya = cita[Math.floor(Math.random() * cita.length)]
-    piyo.sendFileFromUrl(from, raya, 'citacita.mp3', id)
-    .then(() => console.log('Success sending cita'))
-        })
-        .catch(() => {
-            piyo.reply(from, 'Ada yang Error!', id)
-        })
-    break
     case 'lord'://Piyobot
     fetch('https://raw.githubusercontent.com/AlvioAdjiJanuar/lord/main/jumpscare.txt')
     .then(res => res.text())
@@ -4080,18 +3726,6 @@ case 'motivasi':
                 let senja = body.split('\n')
                 let randomsenja = senja[Math.floor(Math.random() * senja.length)]
                 piyo.reply(from, randomsenja, id)
-            })
-            .catch(() => {
-                piyo.reply(from, 'Ada yang Error!', id)
-            })
-            break
-            case 'fiersa':
-                fetch('https://raw.githubusercontent.com/AlvioAdjiJanuar/Fiersa-Besari/main/fiersa-besari.txt')
-            .then(res => res.text())
-            .then(body => {
-                let ff = body.split('\n')
-                let randomff = ff[Math.floor(Math.random() * ff.length)]
-                piyo.reply(from, randomff, id)
             })
             .catch(() => {
                 piyo.reply(from, 'Ada yang Error!', id)
@@ -4174,15 +3808,7 @@ case 'motivasi':
             .then(async ({result}) => {
                 await piyo.sendText(from, `${result}` ,id)
             })
-            break
-			
-            case 'nhpdf':
-            if (args.length === 0) return piyo.reply(from, `Pake Kodenya mas` , id)
-            await piyo.reply(from, ind.wait(), id)
-            const nh = await axios.get(`https://lolhuman.herokuapp.com/api/nhentaipdf/${q}?apikey=${lolhuman}`)
-            await piyo.sendFileFromUrl(from, nh.data.result , 'piyo.pdf' , '' , id)
-            break
-			
+            break			
             case 'listhero':
                 await piyo.sendText(from, ind.wait(), id)
             rugaapi.epep()
@@ -4191,24 +3817,7 @@ case 'motivasi':
                 await piyo.reply(from, `Nih gan : ${result}` , id) 
 			})
             break
-          case 'kemem': 
-          case 'memek':               
-            piyo.reply(from, `sedang maintance` ,id)
-            break
-        case 'xnxxapp':
-            if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner Murah kok`, id)
-            await piyo.sendContact(from, ownerNumber)
-            await piyo.reply(from, ind.wait(), id)
-           await piyo.sendFileFromUrl(from, `https://piyobot.000webhostapp.com/XXNX%20Mod%20agustusan%20(SFILE.MOBI).apk`, 'xxnx.apk', id)
-           await piyo.reply(from, 'Nih\'s Apknya mas ')
-           .then(() => console.log('Success send apk'))
-break
-                case 'nekopoiapp':
-              if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner Murah kok`, id)          
-           await piyo.reply(from, ind.wait(), id)
-           await piyo.sendFileFromUrl(from, `https://bit.ly/nekopoiapp`, 'nekopoi.apk', `Nih apk nya mas` ,  id)
-           .then(() => console.log('Success send apk'))
-break        
+       
 case 'register':
                 if (isRegistered) return await piyo.reply(from, ind.registeredAlready(), id)
                 if (!q.includes('|')) return await piyo.sendFile(from, './media/register.png' , id)
@@ -4501,25 +4110,6 @@ case 'resep':
                     piyo.reply(from, 'Ada yang Error!', id)
                 })
                 break
-case 'nhdl':
-                    
-                    if (isGroupMsg) {
-                        if (!isNsfw) return await piyo.reply(from, ind.notNsfw(), id)
-    }
-case 'nhder':
-        
-        if (args.length !== 1) return await piyo.reply(from, 'Silakan masukkan kode dengan benar!', id)
-        await piyo.reply(from, ind.wait(), id)
-        try {
-            const kodeDojin = args[0]
-            const proccessLink = `https://nhder.herokuapp.com/download/nhentai/${kodeDojin}/zip`
-            const captionDojin = `------[ NHENTAI DOWNLOADER ]------\n\n➸ Kode doujin: ${kodeDojin}`
-            await piyo.sendFileFromUrl(from, proccessLink, `${kodeDojin}.zip`, '' , id)
-        } catch (err) {
-            console.error(err)
-              await piyo.reply(from, `Error!\n${err}`, id)
-        }
-    break
 case 'wiki':          
                 if (args.length == 0) return piyo.reply(from, `Untuk mencari suatu kata dari wikipedia\nketik: ${prefix}wiki [kata]`, id)
                 const wikip = body.slice(6)
@@ -4584,27 +4174,7 @@ case 'sspc':
         //Fun Menu
 case 'chat':
             piyo.reply(from, `Untuk mengaktifkan piyobot chat\n\n penggunannya\n${prefix}piyo on --mengaktifkan\n${prefix}piyo off --menonatifkan\n`, id)
-            break
-            break
-case 'piyo':
-            if (isGroupMsg) 
-            {return await piyo.reply(from, `Fitur ini khusus private chat` ,id)  
-        }else{
-            if (args.length !== 1) return piyo.reply(from, `Untuk mengaktifkan piyo pada  Chat\n\nPenggunaan\n${prefix}piyo on --mengaktifkan\n${prefix}piyo off --nonaktifkan\n`, id)
-			if (args[0] == 'on') {
-				chatt.push(chatId)
-				fs.writeFileSync('./settings/piyo.json', JSON.stringify(chatt))
-                                piyo.reply(from, 'Mengaktifkan bot piyo-piyo!', id)
-			        } else if (args[0] == 'off') {
-				let inxx = chatt.indexOf(chatId)
-				chatt.splice(inxx, 1)
-				fs.writeFileSync('./settings/piyo.json', JSON.stringify(chatt))
-				piyo.reply(from, 'Menonaktifkan bot piyo-piyo!', id)
-			        } else {
-				piyo.reply(from, `Untuk mengaktifkan piyo \n\nPenggunaan\n${prefix}piyo on --mengaktifkan\n${prefix}piyo off --nonaktifkan\n`, id)
-            }
-        }
-			break    
+            break  
 case 'simisimi':
 			if (!isGroupMsg) return piyo.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
 			piyo.reply(from, `Untuk mengaktifkan simi-simi pada Group Chat\n\nPenggunaan\n${prefix}simi on --mengaktifkan\n${prefix}simi off --nonaktifkan\n`, id)
